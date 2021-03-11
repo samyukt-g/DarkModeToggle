@@ -1,0 +1,121 @@
+html {
+  height: 100%;
+  font-family: "Segoe UI";
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  --clr-highlight: #ff0080;
+}
+
+/* Themes */
+html[data-theme="light"] {
+  --clr-bg: #fcfcfc;
+  --clr-container: #ebebeb;
+  --clr-text: #333333;
+}
+html[data-theme="dark"] {
+  --clr-bg: #272727;
+  --clr-container: #3d3d3d;
+  --clr-text: #fcfcfc;
+}
+
+body {
+  background-color: var(--clr-bg);
+}
+p {
+  color: var(--clr-text);
+}
+h1,
+h2,
+h3 {
+  color: var(--clr-highlight);
+}
+a {
+  text-decoration: underline;
+  color: var(--clr-text);
+}
+
+/*Containers*/
+.container {
+  background-color: var(--clr-container);
+  margin: 5em;
+  padding: 5em;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+.main-container {
+  background-color: var(--clr-container);
+  margin: 5em;
+  padding: 5em;
+  border-radius: 15px;
+}
+.subcontainer {
+  max-width: 80%;
+}
+
+/*Toggle Key*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #afafaf;
+  transition: 0.2s;
+  border-radius: 30px;
+}
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: var(--clr-highlight);
+}
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/*Cards*/
+section {
+  margin: 5em;
+  padding: none;
+  display: flex;
+  align-items: left;
+}
+section .card {
+  width: 250px;
+  height: 300px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  justify-content: center;
+  padding: 2em;
+  background-color: var(--clr-container);
+}
+section .middle-card {
+  margin: 0 10.5em 0 10.5em;
+}
+section .card h3 {
+  font-size: large;
+  font-weight: 500;
+  font-variant: small-caps;
+}
